@@ -11,10 +11,36 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif}
 header,main,footer{max-width:1120px;margin:auto;padding:22px}header{display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-size:1.55rem;font-weight:950;letter-spacing:.08em}.logo span{color:var(--green)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{color:var(--ink);text-decoration:none;font-weight:700}.hero{position:relative;overflow:hidden;text-align:center;padding:90px 24px 82px;border-radius:32px;background:linear-gradient(135deg,#d9eee5,#f5d9dc 58%,#e8e0f5)}.bubble{position:absolute;border-radius:50%;background:#ffffff75;border:1px solid #ffffffa8}.b1{width:120px;height:120px;left:7%;top:12%}.b2{width:65px;height:65px;right:12%;top:18%}.b3{width:42px;height:42px;right:22%;bottom:12%}.eyebrow{font-weight:850;letter-spacing:.16em;color:#397663;font-size:.8rem}h1{font-size:clamp(2.8rem,8vw,5.6rem);line-height:1;margin:18px auto;max-width:850px;letter-spacing:-.055em}h1 em{font-style:normal;color:#397663}.hero p{max-width:620px;margin:20px auto 28px;color:#49685d;font-size:1.08rem;line-height:1.7}.btn{display:inline-block;padding:14px 23px;border-radius:999px;background:var(--green);color:white;text-decoration:none;font-weight:850;box-shadow:0 8px 20px #39766325}.btn.alt{background:#fffaf0;color:var(--green);margin-left:9px}.section{padding:54px 0}h2{font-size:2rem;letter-spacing:-.03em;margin-bottom:8px}.intro{color:var(--muted);line-height:1.7}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:25px;box-shadow:0 10px 30px #23483e0a}.soap{height:118px;border-radius:24px;margin-bottom:18px;display:grid;place-items:center;font-size:3.3rem;background:linear-gradient(135deg,#d9eee5,#b9d9ca)}.card:nth-child(2) .soap{background:linear-gradient(135deg,#f5d9dc,#f4c5cc)}.card:nth-child(3) .soap{background:linear-gradient(135deg,#e8e0f5,#d3c6eb)}.card h3{margin:0 0 8px}.card p{color:var(--muted);line-height:1.6;min-height:48px}.price{font-size:1.8rem;font-weight:950;color:var(--green);margin:12px 0}.tag{display:inline-block;padding:6px 11px;border-radius:99px;background:var(--mint);font-size:.78rem;font-weight:800}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{background:#f0f6f1;border-radius:20px;padding:22px}.step strong{font-size:1.2rem}.contact{background:var(--mint);border-radius:28px;padding:34px}.contact p{color:var(--muted);line-height:1.7}footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);margin-top:40px;padding-bottom:35px}.small{font-size:.86rem;color:var(--muted)}
 @media(max-width:720px){header{flex-direction:column}nav{justify-content:center;gap:15px}.hero{padding:65px 18px}.cards,.steps{grid-template-columns:1fr}.section{padding:38px 0}.btn.alt{margin:10px 0 0}}
+
+.promo-wrap{max-width:1120px;margin:0 auto;padding:0 22px 18px}
+.promo{border:1px solid #d6e6dc;border-radius:22px;padding:20px 22px;text-align:center;background:linear-gradient(110deg,#fffaf0,#f5d9dc 52%,#e8e0f5);box-shadow:0 8px 24px #23483e0a}
+.promo-kicker{font-size:.75rem;letter-spacing:.15em;font-weight:900;color:#397663}
+.promo h2{margin:7px 0;font-size:clamp(1.35rem,4vw,2rem)}
+.promo p{margin:7px 0;color:#49685d}
+.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:15px 0 4px}
+.countdown div{min-width:66px;padding:10px 12px;border-radius:14px;background:#ffffffc9}
+.countdown strong{display:block;font-size:1.55rem;line-height:1.2;color:#23483e;font-variant-numeric:tabular-nums}
+.countdown span{font-size:.68rem;color:#627d73;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.promo-live{background:linear-gradient(110deg,#d9eee5,#fffaf0 55%,#f5d9dc)}
+.promo-ended{display:none}
+@media(max-width:720px){.promo-wrap{padding:0 14px 14px}.promo{padding:17px 12px}.countdown{gap:7px}.countdown div{min-width:61px;padding:9px 8px}}
 </style>
 </head>
 <body>
 <header><a class="logo" href="#" style="color:inherit;text-decoration:none">🫧 SOAP<span>ORA</span></a><nav><a href="#ponuka">Mydlá</a><a href="#objednavka">Ako objednať</a><a href="#kontakt">Kontakt</a></nav></header>
+
+<div class="promo-wrap"><section class="promo" id="soapora-promo" aria-live="polite">
+<div class="promo-kicker" id="promo-kicker">ŠPECIÁLNA AKCIA SOAPORA</div>
+<h2 id="promo-title">Vianočná akcia sa blíži 🎄</h2>
+<p id="promo-description">Už čoskoro: 2 + 1 ZADARMO na SOAPORA mydlá!</p>
+<div class="countdown" id="promo-countdown">
+<div><strong id="cd-days">00</strong><span>Dní</span></div>
+<div><strong id="cd-hours">00</strong><span>Hodín</span></div>
+<div><strong id="cd-minutes">00</strong><span>Minút</span></div>
+<div><strong id="cd-seconds">00</strong><span>Sekúnd</span></div>
+</div>
+<p class="small" id="promo-footnote">Akcia štartuje 10. decembra a potrvá do 26. decembra 2026.</p>
+</section></div>
 <main>
 <section class="hero"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><div class="eyebrow">MALÉ MYDLO · VEĽKÁ RADOSŤ</div><h1>Dopraj si trochu <em>čistej pohody.</em></h1><p>Vitaj v SOAPORA – v malom mydlovom svete, kde si vyberieš svoje obľúbené mydlo jednoducho a za super cenu.</p><a class="btn" href="#ponuka">Pozrieť mydlá</a><a class="btn alt" href="#kontakt">Kontaktovať nás</a></section>
 <section id="ponuka" class="section"><h2>Naša mydlová ponuka 🧼</h2><p class="intro">Vyber si vôňu, ktorá ti spríjemní deň. Každé mydlo stojí iba 0,50 €.</p>
@@ -27,5 +53,44 @@ header,main,footer{max-width:1120px;margin:auto;padding:22px}header{display:flex
 <section id="kontakt" class="section"><div class="contact"><h2>Máte otázku? 🫧</h2><p>Napíšte nám a radi sa dohodneme na objednávke.</p><a class="btn" href="mailto:Poppyplaychapter3@gmail.com?cc=garanyilukas16@gmail.com?subject=SOAPORA%20-%20objednavka">Napísať SOAPORA</a><p class="small">E-maily: Poppyplaychapter3@gmail.com · garanyilukas16@gmail.com</p></div></section>
 </main>
 <footer>© 2026 SOAPORA · Mydlový e-shop · Čistá pohoda za 0,50 €</footer>
+
+<script>
+(function(){
+ const promo=document.getElementById('soapora-promo');
+ const title=document.getElementById('promo-title');
+ const desc=document.getElementById('promo-description');
+ const kicker=document.getElementById('promo-kicker');
+ const countdown=document.getElementById('promo-countdown');
+ const foot=document.getElementById('promo-footnote');
+ const start=new Date('2026-12-10T00:00:00');
+ const end=new Date('2026-12-27T00:00:00');
+ const pad=n=>String(n).padStart(2,'0');
+ function update(){
+  const now=new Date();
+  if(now<start){
+   kicker.textContent='ODPOČÍTAVAME DO VIANOC';
+   title.textContent='Vianočná akcia sa blíži 🎄';
+   desc.textContent='Už čoskoro: 2 + 1 ZADARMO na SOAPORA mydlá!';
+   foot.textContent='Akcia štartuje 10. decembra a potrvá do 26. decembra 2026.';
+   const d=Math.max(0,start-now);
+   document.getElementById('cd-days').textContent=pad(Math.floor(d/86400000));
+   document.getElementById('cd-hours').textContent=pad(Math.floor(d/3600000)%24);
+   document.getElementById('cd-minutes').textContent=pad(Math.floor(d/60000)%60);
+   document.getElementById('cd-seconds').textContent=pad(Math.floor(d/1000)%60);
+  }else if(now<end){
+   promo.classList.add('promo-live');
+   kicker.textContent='VIANOČNÁ PONUKA · 10.–26. DECEMBER';
+   title.textContent='2 + 1 ZADARMO 🎁';
+   desc.textContent='Vyber si tri mydlá a jedno z nich máš zadarmo!';
+   countdown.style.display='none';
+   foot.textContent='Vianočná akcia SOAPORA platí do 26. decembra 2026.';
+  }else{
+   promo.classList.add('promo-ended');
+  }
+ }
+ update();
+ setInterval(update,1000);
+})();
+</script>
 </body>
 </html>
